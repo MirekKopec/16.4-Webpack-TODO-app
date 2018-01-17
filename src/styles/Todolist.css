@@ -1,0 +1,25 @@
+
+.TodoList {
+    background-color: #49535d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px #444;
+    max-width: 700px;
+    padding: 20px;
+    width: 100%;
+}
+
+.liStyle {
+	color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+
+.btnDelete {
+    border: 1px solid #b96f6f;
+    border-radius: 5px;
+    background-color: inherit;
+    color: #b96f6f;
+}

@@ -1,12 +1,22 @@
 import React from 'react';
-import style from './App.css';
+import style from '../styles/App.css';
 import Title from '../components/Title.js';
+import Todolist from '../components/TodoList.js';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [{
+                    id: 1,
+                        text: 'clean room'
+                    }, {
+                    id: 2,
+                        text: 'wash the dishes'
+                    }, {
+                    id: 3,
+                        text: 'feed my cat'
+                  }]
         };
     }
     
@@ -29,6 +39,9 @@ class App extends React.Component {
             <div className={style.TodoApp}>
                 <Title title = 'To do list'
                     count = {this.state.data.length}
+                />
+                <Todolist list = {this.state.data}
+                    removeItem = {this.removeTodo.bind(this)}
                 />
             </div>
         );
