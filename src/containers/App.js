@@ -2,22 +2,24 @@ import React from 'react';
 import uuid from 'uuid';
 import style from '../styles/App.css';
 import Title from '../components/Title.js';
-import Todolist from '../components/TodoList.js';
+import TodoList from '../components/TodoList.js';
+import TodoForm from '../components/TodoForm.js';
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             data: [{
-                    id: 1,
-                        text: 'clean room'
-                    }, {
-                    id: 2,
-                        text: 'wash the dishes'
-                    }, {
-                    id: 3,
-                        text: 'feed my cat'
-                  }]
+                id: 1,
+                text: 'clean room'
+                }, {
+                id: 2,
+                text: 'wash the dishes'
+                }, {
+                id: 3,
+                text: 'feed my cat'
+                }]
         };
     }
     
@@ -41,7 +43,9 @@ class App extends React.Component {
                 <Title title = 'To do list'
                     count = {this.state.data.length}
                 />
-                <Todolist list = {this.state.data}
+                <TodoForm addTodo = {this.addTodo.bind(this)} 
+                />
+                <TodoList list = {this.state.data}
                     removeItem = {this.removeTodo.bind(this)}
                 />
             </div>

@@ -1,9 +1,8 @@
 const path = require('path');
-//var czy const??
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-var OptimizeJsPlugin = require('optimize-js-plugin'); 
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeJsPlugin = require('optimize-js-plugin'); 
 
 
 var env = process.env.NODE_ENV || 'development';
@@ -41,7 +40,6 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
                 loader: "babel-loader"
             },
             {
@@ -57,5 +55,7 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    
+    plugins: plugins
 };
